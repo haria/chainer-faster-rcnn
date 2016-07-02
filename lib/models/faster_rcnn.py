@@ -24,8 +24,8 @@ class FasterRCNN(chainer.Chain):
         self.add_link('rpn_bbox_pred', L.Convolution2D(512, 36, 1, 1, 0))
         self.add_link('fc6', L.Linear(25088, 4096))
         self.add_link('fc7', L.Linear(4096, 4096))
-        self.add_link('cls_score', L.Linear(4096, 21))
-        self.add_link('bbox_pred', L.Linear(4096, 84))
+        self.add_link('cls_score', L.Linear(4096, 2))
+        self.add_link('bbox_pred', L.Linear(4096, 8))
         self.train = True
         self.gpu = gpu
 
